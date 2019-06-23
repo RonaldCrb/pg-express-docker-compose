@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-ENV NODE_ENV=development
+ENV NODE_ENV=production
 
 RUN apk add --no-cache tini 
 

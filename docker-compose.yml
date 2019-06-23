@@ -3,6 +3,7 @@ version: '2.4'
 services:
   express:
     build: .
+    command: /node/app/node_modules/.bin/nodemon
     ports:
       - 3001:3001
     depends_on:

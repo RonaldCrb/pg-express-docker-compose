@@ -1,5 +1,6 @@
 const express = require('express')
 const sequelize = require('./src/db/sequelize')
+const smartlogRoutes = require('./src/routes/smartlogRoutes')
 const app = express()
 
 app.use((req, res, next) => {
@@ -10,16 +11,10 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-  res.status(200).send('<h1>Docker + Node = TITS</h1>')
+  res.status(200).send('<h1>Docker-compose + Node + PG = TITS</h1>')
 })
 
-app.get('/docker', (req, res) => {
-  res.status(200).send('<h1>Docker node stuff is REEELLLL</h1>')
-})
-
-app.get('/tt', (req, res) => {
-  res.status(200).send('<h1>Docker node stuff is REEELLLL</h1>')
-})
+app.use('/smartlogs', smartlogRoutes)
 
 const port = process.env.PORT || 3001
 
