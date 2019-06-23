@@ -1,0 +1,27 @@
+version: '2.4'
+
+services:
+  express:
+    build: .
+    ports:
+      - 3001:3001
+    depends_on:
+      - db
+    volumes:
+      - .:/node/app
+    environment:
+      - DEBUG=sample-express:*
+
+  db:
+    image: postgres:11-alpine
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: postgres
+    ports:
+    - "8991:5432"
+
+volumes:
+  db:
