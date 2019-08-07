@@ -13,6 +13,12 @@ logs
 results
 tmp
 
+# docker compose files should not be in any of the images.
+.docker-compose*.yml
+
+# git folder 
+.git/
+
 # Build
 public/css/main.css
 
