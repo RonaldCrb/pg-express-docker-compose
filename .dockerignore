@@ -16,6 +16,12 @@ tmp
 # docker compose files should not be in any of the images.
 .docker-compose*.yml
 
+# Dockerfiles are not necessary to be inside the images, use docker history
+Dockerfile
+
+# README is not necessary inside the images
+README.md
+
 # git folder 
 .git/
 
